@@ -54,6 +54,7 @@ function select() {
   if (isItOpen(x)) {
       xOrO(x)
       changeColor(x)
+      crapWinner(x.innerText)
       counter++;
       //winner()
   }
@@ -81,6 +82,34 @@ function clearAll(){
     resetCSS(squares[i])
   }
 }
+
+function crapWinner(x){
+  if (b1.innerText == x && b2.innerText == x && b3.innerText == x) {
+    window.alert("Winner")
+  }
+  if (b4.innerText == x && b5.innerText == x && b6.innerText == x) {
+    window.alert("Winner")
+  }
+  if (b7.innerText == x && b8.innerText == x && b9.innerText == x) {
+    window.alert("Winner")
+  }
+  if (b1.innerText == x && b4.innerText == x && b7.innerText == x) {
+    window.alert("Winner")
+  }
+  if (b2.innerText == x && b5.innerText == x && b8.innerText == x) {
+    window.alert("Winner")
+  }
+  if (b3.innerText == x && b6.innerText == x && b9.innerText == x) {
+    window.alert("Winner")
+  }
+  if (b1.innerText == x && b5.innerText == x && b9.innerText == x) {
+    window.alert("Winner")
+  }
+  if (b3.innerText == x && b5.innerText == x && b7.innerText == x) {
+    window.alert("Winner")
+  }
+}
+
 
 // function selectWinner() {
 //   //console.log(this)
