@@ -10,6 +10,17 @@ var b9 = document.getElementById("b9")
 
 var box
 var counter = 0
+var wins = [
+            [1,2,3],
+            [4,5,6],
+            [7,8,9],
+            [1,5,9],
+            [3,5,7],
+            [1,4,7],
+            [2,5,8],
+            [3,6,9]
+          ]
+
 //**************************-- Variables --************************************
 //**************************-- Functions --************************************
 b1.addEventListener('click', select)
@@ -22,13 +33,12 @@ b7.addEventListener('click', select)
 b8.addEventListener('click', select)
 b9.addEventListener('click', select)
 
-// function neverMind(){
-//   //on click set the variable box = to a specific square
-//   box = this
-// }
-
 function isItOpen(x){
-  return this.innerText == null
+  if (x.innerText == 'X' || x.innerText == 'O') {
+    return false
+  }else{
+    return true
+  }
 }
 
 function xOrO(x){ //square, player
@@ -45,6 +55,7 @@ function select() {
       xOrO(x)
       changeColor(x)
       counter++;
+      //winner()
   }
 }
 
@@ -70,3 +81,51 @@ function clearAll(){
     resetCSS(squares[i])
   }
 }
+
+// function selectWinner() {
+//   //console.log(this)
+//   var x = this
+//   if (isItOpen(x)) {
+//       oneOrEleven(x)
+//   }
+// }
+// function oneOrEleven(x){ //square, player
+//   if (counter % 2 == 0) {
+//     x.addClass(1)
+//   }else {
+//     x.addClass(11)
+//   }
+// }
+// var winnerArray = [
+//   'b1',''
+// ]
+// function winner() {
+//
+// }
+
+//}
+// function getPlaces(){
+//     var piecePlace = {'X':[],'O':[]};
+//     for (var i = 0; i < 9; i++){
+//         if (document.getElementsByClassName("square")[i].innerText == 'X'){
+//             piecePlace.X[0][i].push(i+1)
+//         } else if (document.getElementsByClassName("square")[i].innerText == 'O'){
+//             piecePlace.O[0][i].push(i+1)
+//         }
+//     }
+//     console.log(piecePlace.X[0][0])
+//     return piecePlace;
+// }
+// // I'll make the win arrays a dictionary then
+// //I'll have to iterate through the X:0 and o:0 and see if it matches
+// function winner(){
+//   for (var i = 0; i < getPlaces.length; i++) {
+//     for (var j = 0; j < wins.length; j++) {
+//       if (piecePlace.X[i] == wins[j]) {
+//         window.alert("You win!!!")
+//       }else if (piecePlace.O[i] == wins[j]) {
+//         window.alert("You win!!!")
+//       }
+//     }
+//   }
+//}
